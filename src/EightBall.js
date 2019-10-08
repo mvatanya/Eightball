@@ -29,19 +29,19 @@ class EightBall extends Component {
 
   constructor(props){
     super(props);
-    this.state = {currColor: "black", message:"Think of a Question"}
+    this.state = {color: "black", msg:"Think of a Question"}
   }
 
   handleClick = () => {
     let randomItem = this.props.answers[Math.floor(Math.random()*this.props.answers.length)];
-    this.setState({currColor: randomItem.color, message: randomItem.msg})
+    this.setState({color: randomItem.color, msg: randomItem.msg})
   }
 
   render() {
-    let color = this.state.currColor
+    let color = this.state.color
     return(
       <div onClick={this.handleClick} id="rectangle" style={ {backgroundColor: color} }>
-        <div id="message">{this.state.message}</div>
+        <div id="message">{this.state.msg}</div>
       </div>
     )
   }
